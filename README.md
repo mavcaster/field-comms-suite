@@ -40,14 +40,15 @@ This tool bundles the most commonly used digital comms, antenna tools, encryptio
 
 ---
 
-## 🚀 How to Install
+## ⚡ Quick Install via PowerShell
 
-1. Download the latest installer from the [Releases Page](https://github.com/mavcaster/field-comms-suite/releases)
-2. Run `FieldCommsSuite_v1.0.2.exe` as Administrator
-3. Select the tools you want to install
-4. Shortcuts for key apps (Dump1090, Gpredict, GPS2Time, SDR#) are added to your desktop
+To download and run the latest Field Comms Suite installer from GitHub, open **PowerShell** and paste the following:
 
-All apps are installed to:  
+```powershell
+Invoke-WebRequest -Uri "https://github.com/mavcaster/field-comms-suite/releases/latest/download/FieldCommsSuite_installer.zip" -OutFile "installer.zip"; Expand-Archive -Path "installer.zip" -DestinationPath "installer" -Force; Start-Process ".\installer\FieldCommsSuite.exe"
+```
+
+All assets are installed to:  
 📁 `C:\Program Files\Field Comms Suite`
 
 ---
@@ -55,7 +56,6 @@ All apps are installed to:
 ## 🧰 Features
 
 - ✅ Fully offline installation (ideal for field prep)
-- ✅ Custom branded UI with banners and logos
 - ✅ Selective component install (only what you need)
 - ✅ Automatic shortcut creation for portable tools
 
