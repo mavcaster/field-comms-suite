@@ -40,12 +40,15 @@ This tool bundles the most commonly used digital comms, antenna tools, encryptio
 
 ---
 
-## ⚡ Quick Install via PowerShell
+## ⚡ Quick Install via PowerShell (Auto-Detects Installer)
 
-To download and run the latest Field Comms Suite installer from GitHub, open **PowerShell** and paste the following:
+To install the latest Field Comms Suite:
 
 ```powershell
-Invoke-WebRequest -Uri "https://github.com/mavcaster/field-comms-suite/releases/latest/download/FieldCommsSuite_installer.zip" -OutFile "installer.zip"; Expand-Archive -Path "installer.zip" -DestinationPath "installer" -Force; Start-Process ".\installer\FieldCommsSuite.exe"
+Invoke-WebRequest -Uri "https://github.com/mavcaster/field-comms-suite/releases/latest/download/FieldCommsSuite_installer.zip" -OutFile "installer.zip"
+Expand-Archive -Path "installer.zip" -DestinationPath "installer" -Force
+$exe = Get-ChildItem -Path ".\installer" -Recurse -Filter *.exe | Select-Object -First 1
+if ($exe) { Start-Process $exe.FullName } else { Write-Host "❌ No .exe found." -ForegroundColor Red }
 ```
 
 All assets are installed to:  
